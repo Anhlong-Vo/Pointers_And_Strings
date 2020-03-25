@@ -35,24 +35,4 @@ int main() {
 	//start at the beginning
 	char *pIter 	= &myNewString[0];
 	lookForTag(lenmyNewString, sTag, lenTagString, pIter);
-
-	//how about we make a copy?
-	char *pTemp = 0;
-	int len = strlen(pIter) +1;	//add 1 for the terminating \0
-
-
-	pTemp = new char[len];
-	if ( pTemp ){
-		//set it all to 0
-		memset( pTemp, 0,  (len)* sizeof(char));
-
-		//copy away
-		strncpy(pTemp,pIter,len);
-		string myNewString(pIter);
-	}
-
-	//clean up the wreakage
-	if ( pTemp )
-		delete [] pTemp;
-	pTemp = NULL;
 }
